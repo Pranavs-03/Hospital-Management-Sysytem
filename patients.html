@@ -1,0 +1,382 @@
+<header>
+    <h1><i class="fas fa-procedures"></i> Patient Management</h1>
+</header>
+
+<div class="container">
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th><i class="fas fa-user"></i> Name</th>
+                <th><i class="fas fa-calendar"></i> Age</th>
+                <th><i class="fas fa-venus-mars"></i> Gender</th>
+                <th><i class="fas fa-procedures"></i> Condition</th>
+                <th><i class="fas fa-user-md"></i> Assigned Doctor</th>
+                <th><i class="fas fa-cog"></i> Actions</th>
+            </tr>
+        </thead>
+        <tbody id="patientTable">
+            <tr>
+                <td><i class="fas fa-male text-primary"></i> John Carter</td>
+                <td>56</td>
+                <td>Male</td>
+                <td><span class="condition critical">Heart Disease</span></td>
+                <td>Dr. A. Sharma (Cardiologist)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-female text-danger"></i> Emily Davis</td>
+                <td>45</td>
+                <td>Female</td>
+                <td><span class="condition moderate">Migraines</span></td>
+                <td>Dr. B. Rao (Neurologist)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-male text-primary"></i> Michael Scott</td>
+                <td>60</td>
+                <td>Male</td>
+                <td><span class="condition mild">Knee Pain</span></td>
+                <td>Dr. C. Patel (Orthopedic Surgeon)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-female text-danger"></i> Sophia Wilson</td>
+                <td>34</td>
+                <td>Female</td>
+                <td><span class="condition critical">Diabetes</span></td>
+                <td>Dr. D. Verma (General Physician)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-male text-primary"></i> David Miller</td>
+                <td>28</td>
+                <td>Male</td>
+                <td><span class="condition mild">Dental Cavity</span></td>
+                <td>Dr. E. Singh (Dentist)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-female text-danger"></i> Olivia Brown</td>
+                <td>2</td>
+                <td>Female</td>
+                <td><span class="condition moderate">Fever</span></td>
+                <td>Dr. F. Kapoor (Pediatrician)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-male text-primary"></i> Mark Robinson</td>
+                <td>38</td>
+                <td>Male</td>
+                <td><span class="condition critical">Liver Failure</span></td>
+                <td>Dr. H. Agarwal (Hepatologist)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-female text-danger"></i> Rachel Adams</td>
+                <td>25</td>
+                <td>Female</td>
+                <td><span class="condition moderate">Anemia</span></td>
+                <td>Dr. I. Roy (Hematologist)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-male text-primary"></i> Liam Anderson</td>
+                <td>70</td>
+                <td>Male</td>
+                <td><span class="condition critical">Lung Cancer</span></td>
+                <td>Dr. G. Mehta (Pulmonologist)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-female text-danger"></i> Emma Johnson</td>
+                <td>40</td>
+                <td>Female</td>
+                <td><span class="condition mild">Allergy</span></td>
+                <td>Dr. I. Roy (Dermatologist)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-male text-primary"></i> Noah White</td>
+                <td>50</td>
+                <td>Male</td>
+                <td><span class="condition critical">Kidney Failure</span></td>
+                <td>Dr. J. Nair (Nephrologist)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-female text-danger"></i> Mia Thompson</td>
+                <td>30</td>
+                <td>Female</td>
+                <td><span class="condition moderate">Asthma</span></td>
+                <td>Dr. G. Mehta (Pulmonologist)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <!-- Additional Rows to make 20 patients -->
+            <tr>
+                <td><i class="fas fa-male text-primary"></i> Benjamin Clark</td>
+                <td>65</td>
+                <td>Male</td>
+                <td><span class="condition mild">Arthritis</span></td>
+                <td>Dr. C. Patel (Orthopedic Surgeon)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-female text-danger"></i> Isabella Martinez</td>
+                <td>55</td>
+                <td>Female</td>
+                <td><span class="condition moderate">Hypertension</span></td>
+                <td>Dr. A. Sharma (Cardiologist)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-male text-primary"></i> Oliver Rodriguez</td>
+                <td>47</td>
+                <td>Male</td>
+                <td><span class="condition mild">Obesity</span></td>
+                <td>Dr. D. Verma (General Physician)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-female text-danger"></i> Ava Lee</td>
+                <td>32</td>
+                <td>Female</td>
+                <td><span class="condition moderate">Migraine</span></td>
+                <td>Dr. B. Rao (Neurologist)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-male text-primary"></i> Ethan Lewis</td>
+                <td>58</td>
+                <td>Male</td>
+                <td><span class="condition critical">Stroke</span></td>
+                <td>Dr. A. Sharma (Cardiologist)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-female text-danger"></i> Harper Walker</td>
+                <td>29</td>
+                <td>Female</td>
+                <td><span class="condition moderate">Fracture</span></td>
+                <td>Dr. C. Patel (Orthopedic Surgeon)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-male text-primary"></i> Lucas Hall</td>
+                <td>63</td>
+                <td>Male</td>
+                <td><span class="condition critical">COPD</span></td>
+                <td>Dr. G. Mehta (Pulmonologist)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-female text-danger"></i> Charlotte Young</td>
+                <td>37</td>
+                <td>Female</td>
+                <td><span class="condition moderate">Thyroid Disorder</span></td>
+                <td>Dr. D. Verma (General Physician)</td>
+                <td class="actions">
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i><span class="icon-text">Edit</span></button>
+                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i><span class="icon-text">Delete</span></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        header {
+            background: linear-gradient(90deg, #007bff, #6610f2);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .table thead {
+            background-color: #343a40;
+            color: white;
+        }
+        .table tbody tr:hover {
+            background-color: #e9ecef;
+        }
+        .condition {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .critical {
+            background-color: #dc3545;
+            color: white;
+        }
+        .moderate {
+            background-color: #ffc107;
+            color: black;
+        }
+        .mild {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-sm {
+            margin-right: 5px;
+        }
+        .card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <i class="fas fa-procedures"></i> Patient Management
+</header>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-dark table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th><i class="fas fa-user"></i> Name</th>
+                        <th><i class="fas fa-calendar"></i> Age</th>
+                        <th><i class="fas fa-venus-mars"></i> Gender</th>
+                        <th><i class="fas fa-procedures"></i> Condition</th>
+                        <th><i class="fas fa-user-md"></i> Assigned Doctor</th>
+                        <th><i class="fas fa-cog"></i> Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="patientTable">
+                    <tr>
+                        <td><i class="fas fa-male text-primary"></i> John Carter</td>
+                        <td>56</td>
+                        <td>Male</td>
+                        <td><span class="condition critical">Heart Disease</span></td>
+                        <td>Dr. A. Sharma (Cardiologist)</td>
+                        <td class="actions">
+                            <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-female text-danger"></i> Emily Davis</td>
+                        <td>45</td>
+                        <td>Female</td>
+                        <td><span class="condition moderate">Migraines</span></td>
+                        <td>Dr. B. Rao (Neurologist)</td>
+                        <td class="actions">
+                            <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-male text-primary"></i> Michael Scott</td>
+                        <td>60</td>
+                        <td>Male</td>
+                        <td><span class="condition mild">Knee Pain</span></td>
+                        <td>Dr. C. Patel (Orthopedic Surgeon)</td>
+                        <td class="actions">
+                            <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-female text-danger"></i> Sophia Wilson</td>
+                        <td>34</td>
+                        <td>Female</td>
+                        <td><span class="condition critical">Diabetes</span></td>
+                        <td>Dr. D. Verma (General Physician)</td>
+                        <td class="actions">
+                            <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-male text-primary"></i> David Miller</td>
+                        <td>28</td>
+                        <td>Male</td>
+                        <td><span class="condition mild">Dental Cavity</span></td>
+                        <td>Dr. E. Singh (Dentist)</td>
+                        <td class="actions">
+                            <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button>
+                            <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments - Medivance Hospital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script>
+        function bookAppointment(event) {
+            event.preventDefault(); // Prevent form submission
+
+            let patientName = document.getElementById("patientName").value.trim();
+            let contact = document.getElementById("contact").value.trim();
+            let doctor = document.getElementById("doctor").value;
+            let date = document.getElementById("date").value;
+            let time = document.getElementById("time").value;
+
+            if (!patientName || !contact || !doctor || !date || !time) {
+                document.getElementById("error-msg").style.display = "block";
+                return;
+            } else {
+                document.getElementById("error-msg").style.display = "none";
+            }
+
+            document.getElementById("success-msg").innerHTML = `<i class="fas fa-check-circle"></i> Appointment booked successfully! <br>
+            <strong>Patient:</strong> ${patientName} <br>
+            <strong>Doctor:</strong> ${doctor} <br>
+            <strong>Date:</strong> ${date} <br>
+            <strong>Time:</strong> ${time}`;
+            
+            document.getElementById("success-msg").style.display = "block";
+            setTimeout(() => { document.getElementById("success-msg").style.display = "none"; }, 5000);
+            
+            document.getElementById("appointmentForm").reset(); // Clear form
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .btn-primary {
+            width: 100%;
+        }
+        .alert {
+            display: none;
+            margin-top: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><i class="fas fa-calendar-check"></i> Appointment Scheduling</h1>
+    </header>
+
+    <div class="container">
+        <h2><i class="fas fa-user-md"></i> Book an Appointment</h2>
+
+        <div class="alert alert-danger" id="error-msg">
+            <i class="fas fa-exclamation-triangle"></i> Please fill in all fields before booking.
+        </div>
+
+        <div class="alert alert-success" id="success-msg"></div>
+
+        <form id="appointmentForm" onsubmit="bookAppointment(event)">
+            <div class="mb-3">
+                <label for="patientName" class="form-label"><i class="fas fa-user"></i> Patient Name</label>
+                <input type="text" id="patientName" class="form-control" placeholder="Enter full name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="contact" class="form-label"><i class="fas fa-phone"></i> Contact Number</label>
+                <input type="text" id="contact" class="form-control" placeholder="Enter phone number" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="doctor" class="form-label"><i class="fas fa-user-md"></i> Choose a Doctor</label>
+                <select id="doctor" class="form-select" required>
+                    <option value="">-- Select a Doctor --</option>
+                    <option value="Dr. A. Sharma (Cardiologist)">Dr. A. Sharma (Cardiologist)</option>
+                    <option value="Dr. B. Rao (Neurologist)">Dr. B. Rao (Neurologist)</option>
+                    <option value="Dr. C. Patel (Orthopedic Surgeon)">Dr. C. Patel (Orthopedic Surgeon)</option>
+                    <option value="Dr. D. Verma (General Physician)">Dr. D. Verma (General Physician)</option>
+                    <option value="Dr. E. Singh (Dentist)">Dr. E. Singh (Dentist)</option>
+                    <option value="Dr. F. Kapoor (Pediatrician)">Dr. F. Kapoor (Pediatrician)</option>
+                    <option value="Dr. G. Mehta (Pulmonologist)">Dr. G. Mehta (Pulmonologist)</option>
+                    <option value="Dr. H. Iyer (Oncologist)">Dr. H. Iyer (Oncologist)</option>
+                    <option value="Dr. I. Roy (Dermatologist)">Dr. I. Roy (Dermatologist)</option>
+                    <option value="Dr. J. Nair (Ophthalmologist)">Dr. J. Nair (Ophthalmologist)</option>
+                    <option value="Dr. K. Bose (Gynecologist)">Dr. K. Bose (Gynecologist)</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="date" class="form-label"><i class="fas fa-calendar-day"></i> Select Date</label>
+                <input type="date" id="date" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="time" class="form-label"><i class="fas fa-clock"></i> Select Time</label>
+                <input type="time" id="time" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary"><i class="fas fa-calendar-plus"></i> Book Appointment</button>
+        </form>
+    </div>
+
+</body>
+</html>

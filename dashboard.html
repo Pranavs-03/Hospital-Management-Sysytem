@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Medivance Hospital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #343a40;
+            padding: 15px 0;
+            text-align: center;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .dashboard {
+            text-align: center;
+            padding: 30px;
+        }
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .stat-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            width: 180px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .stat-box i {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            text-align: left;
+        }
+        .section h3 {
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        .quick-access {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .quick-box {
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+        .quick-box:hover {
+            background: #0056b3;
+        }
+        .quick-box a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><i class="fas fa-hospital"></i> Medivance Hospital Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="doctors.html"><i class="fas fa-user-md"></i> Doctors</a></li>
+                <li><a href="patients.html"><i class="fas fa-procedures"></i> Patients</a></li>
+                <li><a href="appointments.html"><i class="fas fa-calendar-check"></i> Appointments</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="dashboard">
+        <h2>Welcome to the Hospital Dashboard</h2>
+        
+        <div class="stats">
+            <div class="stat-box">
+                <i class="fas fa-user-md"></i>
+                <h3>Doctors</h3>
+                <p>45 Available</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-procedures"></i>
+                <h3>Patients</h3>
+                <p>120 Admitted</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-calendar-check"></i>
+                <h3>Appointments</h3>
+                <p>30 Today</p>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="card"><a href="doctors.html"><i class="fas fa-user-md"></i> Doctors</a></div>
+            <div class="card"><a href="patients.html"><i class="fas fa-procedures"></i> Patients</a></div>
+            <div class="card"><a href="appointments.html"><i class="fas fa-calendar-check"></i> Appointments</a></div>
+        </div>
+    </section>
+
+    <!-- Recent Activities -->
+    <section class="section">
+        <h3>Recent Activities</h3>
+        <ul>
+            <li>New appointment booked for Dr. Smith at 2:00 PM.</li>
+            <li>Emergency case admitted in ICU.</li>
+            <li>Medical supplies restocked in pharmacy.</li>
+            <li>New staff member joined the cardiology department.</li>
+        </ul>
+    </section>
+
+    <!-- Hospital Announcements -->
+    <section class="section">
+        <h3>Announcements</h3>
+        <ul>
+            <li>COVID-19 vaccination drive scheduled for next week.</li>
+            <li>Blood donation camp on March 20, 2025.</li>
+            <li>New OPD timings effective from April 1st.</li>
+        </ul>
+    </section>
+
+    <!-- Health Tips & News -->
+    <section class="section">
+        <h3>Health Tips & News</h3>
+        <p><strong>Preventive Healthcare:</strong> Regular check-ups can help detect diseases early.</p>
+        <p><strong>Heart Health:</strong> Maintain a balanced diet, exercise regularly, and manage stress.</p>
+        <p><strong>Latest Research:</strong> A new study suggests that a Mediterranean diet helps reduce heart disease risk.</p>
+    </section>
+
+    <!-- Quick Access Panel with Links -->
+    <section class="section">
+        <h3>Quick Access</h3>
+        <div class="quick-access">
+            <a href="emergency.html" class="quick-box"><i class="fas fa-ambulance"></i> Emergency</a>
+            <a href="medical_records.html" class="quick-box"><i class="fas fa-file-medical"></i> Medical Records</a>
+            <a href="patient_admissions.html" class="quick-box"><i class="fas fa-hospital-user"></i> Patient Admissions</a>
+            <a href="nurse_station.html" class="quick-box"><i class="fas fa-user-nurse"></i> Nurse Station</a>
+        </div>
+    </section>
+
+</body>
+</html>

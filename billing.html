@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing & Payments - Medivance Hospital</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <script>
+        function generateBill(event) {
+            event.preventDefault();
+
+            let patient = document.getElementById("patient").value;
+            let doctor = document.getElementById("doctor").value;
+            let diagnosis = document.getElementById("diagnosis").value.trim();
+            let treatmentCost = parseFloat(document.getElementById("treatmentCost").value);
+            let paymentMethod = document.getElementById("paymentMethod").value;
+
+            if (!patient || !doctor || !diagnosis || !treatmentCost || !paymentMethod) {
+                alert("Please fill in all fields before generating the bill.");
+                return;
+            }
+
+            let consultationFee = {
+                "Dr. A. Sharma (Cardiologist)": 500,
+                "Dr. B. Rao (Neurologist)": 450,
+                "Dr. C. Patel (Orthopedic Surgeon)": 400,
+                "Dr. D. Verma (General Physician)": 300,
+                "Dr. E. Singh (Dentist)": 350,
+                "Dr. F. Kapoor (Pediatrician)": 320,
+                "Dr. G. Mehta (Pulmonologist)": 400,
+                "Dr. H. Iyer (Oncologist)": 600,
+                "Dr. I. Roy (Dermatologist)": 380,
+                "Dr. J. Nair (Ophthalmologist)": 420,
+                "Dr. K. Bose (Gynecologist)": 500
+            };
+
+            let totalCost = treatmentCost + (consultationFee[doctor] || 300);
+
+            let billSection = document.getElementById("bills");
+            let billEntry = `
+                <div class="bill-card">
+                    <h3><i class="fas fa-user"></i> Patient: ${patient}</h3>
+                    <p><i class="fas fa-user-md"></i> <strong>Doctor:</strong> ${doctor}</p>
+                    <p><i class="fas fa-stethoscope"></i> <strong>Diagnosis:</strong> ${diagnosis}</p>
+                    <p><i class="fas fa-dollar-sign"></i> <strong>Consultation Fee:</strong> $${consultationFee[doctor] || 300}</p>
+                    <p><i class="fas fa-procedures"></i> <strong>Treatment Cost:</strong> $${treatmentCost.toFixed(2)}</p>
+                    <p><i class="fas fa-credit-card"></i> <strong>Payment Method:</strong> ${paymentMethod}</p>
+                    <p><strong>Total Amount:</strong> <strong>$${totalCost.toFixed(2)}</strong></p>
+                    <hr>
+                </div>
+            `;
+
+            billSection.innerHTML += billEntry;
+            document.getElementById("billingForm").reset();
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 24px;
+        }
+
+        .billing-container {
+            background: white;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        form label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        form input, form select, form textarea, form button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        form button:hover {
+            background: #0056b3;
+        }
+
+        .bills-section {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .bill-card {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border-left: 5px solid #007bff;
+        }
+
+        .bill-card p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-file-invoice-dollar"></i> Billing & Payments</h1>
+    </header>
+
+    <div class="billing-container">
+        <h2>Generate Patient Bill</h2>
+
+        <form id="billingForm" onsubmit="generateBill(event)">
+            <label for="patient"><i class="fas fa-user"></i> Select Patient:</label>
+            <select id="patient" name="patient" required>
+                <option value="">-- Select Patient --</option>
+                <option value="John Carter">John Carter</option>
+                <option value="Emily Davis">Emily Davis</option>
+                <option value="Michael Scott">Michael Scott</option>
+                <option value="Sophia Wilson">Sophia Wilson</option>
+                <option value="David Miller">David Miller</option>
+                <option value="Olivia Brown">Olivia Brown</option>
+                <option value="James Anderson">James Anderson</option>
+                <option value="Ava Taylor">Ava Taylor</option>
+                <option value="William Harris">William Harris</option>
+                <option value="Charlotte Lewis">Charlotte Lewis</option>
+            </select>
+
+            <label for="doctor"><i class="fas fa-user-md"></i> Attending Doctor:</label>
+            <select id="doctor" name="doctor" required>
+                <option value="">-- Select Doctor --</option>
+                <option value="Dr. A. Sharma (Cardiologist)">Dr. A. Sharma (Cardiologist)</option>
+                <option value="Dr. B. Rao (Neurologist)">Dr. B. Rao (Neurologist)</option>
+                <option value="Dr. C. Patel (Orthopedic Surgeon)">Dr. C. Patel (Orthopedic Surgeon)</option>
+                <option value="Dr. D. Verma (General Physician)">Dr. D. Verma (General Physician)</option>
+                <option value="Dr. E. Singh (Dentist)">Dr. E. Singh (Dentist)</option>
+            </select>
+
+            <label for="diagnosis"><i class="fas fa-stethoscope"></i> Diagnosis:</label>
+            <textarea id="diagnosis" name="diagnosis" rows="3" required></textarea>
+
+            <label for="treatmentCost"><i class="fas fa-money-bill-wave"></i> Treatment Cost ($):</label>
+            <input type="number" id="treatmentCost" name="treatmentCost" min="0" step="0.01" required>
+
+            <label for="paymentMethod"><i class="fas fa-credit-card"></i> Payment Method:</label>
+            <select id="paymentMethod" required>
+                <option value="">-- Select Payment Method --</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Debit Card">Debit Card</option>
+                <option value="Cash">Cash</option>
+                <option value="Insurance">Insurance</option>
+            </select>
+
+            <button type="submit"><i class="fas fa-file-invoice-dollar"></i> Generate Bill</button>
+        </form>
+    </div>
+
+    <div class="bills-section">
+        <h2>Generated Bills</h2>
+        <div id="bills"></div>
+    </div>
+</body>
+</html>

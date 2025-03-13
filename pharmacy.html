@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Orders - Medivance Hospital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        .medicine-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .medicine-card:hover {
+            transform: scale(1.05);
+        }
+        .medicine-card i {
+            font-size: 40px;
+            color: #007bff;
+        }
+        .cart-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center mb-4"><i class="fas fa-prescription-bottle-alt"></i> Pharmacy Orders</h1>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h4>Select Medicines:</h4>
+                <div class="row" id="medicineList">
+                    <!-- Medicine Cards will be injected here -->
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="cart-section">
+                    <h4><i class="fas fa-shopping-cart"></i> Your Cart</h4>
+                    <ul id="cartItems" class="list-group"></ul>
+                    <h5 class="mt-3">Total: $<span id="totalAmount">0</span></h5>
+                    <button class="btn btn-primary w-100 mt-3" onclick="generateBill()">
+                        <i class="fas fa-receipt"></i> Generate Bill
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        let medicines = [
+            { name: "Paracetamol", price: 10, icon: "fa-pills" },
+            { name: "Antibiotics", price: 15, icon: "fa-capsules" },
+            { name: "Cough Syrup", price: 12, icon: "fa-prescription-bottle" },
+            { name: "Pain Killers", price: 18, icon: "fa-tablets" },
+            { name: "Vitamin Tablets", price: 20, icon: "fa-supplement" },
+            { name: "Antiseptic Cream", price: 8, icon: "fa-band-aid" },
+            { name: "Bandages", price: 5, icon: "fa-first-aid" },
+            { name: "Eye Drops", price: 14, icon: "fa-eye-dropper" },
+            { name: "Diabetes Medicine", price: 25, icon: "fa-syringe" },
+            { name: "Blood Pressure Pills", price: 30, icon: "fa-heartbeat" },
+            { name: "Allergy Medicine", price: 18, icon: "fa-cloud" },
+            { name: "Stomach Antacid", price: 10, icon: "fa-pills" },
+            { name: "Antidepressants", price: 22, icon: "fa-smile-beam" },
+            { name: "Asthma Inhaler", price: 40, icon: "fa-lungs" },
+            { name: "Fever Medicine", price: 12, icon: "fa-temperature-high" },
+            { name: "Cough Lozenges", price: 5, icon: "fa-cough" },
+            { name: "Cold Medicine", price: 15, icon: "fa-snowflake" },
+            { name: "Pain Relief Gel", price: 10, icon: "fa-syringe" },
+            { name: "Blood Thinners", price: 28, icon: "fa-pills" }
+        ];
+
+        function loadMedicines() {
+            let medicineList = document.getElementById("medicineList");
+            medicines.forEach((med, index) => {
+                medicineList.innerHTML += `
+                    <div class="col-md-4">
+                        <div class="medicine-card">
+                            <i class="fas ${med.icon}"></i>
+                            <h5>${med.name}</h5>
+                            <p>Price: $${med.price}</p>
+                            <input type="number" id="qty-${index}" class="form-control mb-2" value="1" min="1">
+                            <button class="btn btn-success w-100" onclick="addToCart(${index})">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function addToCart(index) {
+            let quantity = parseInt(document.getElementById(`qty-${index}`).value);
+            if (quantity <= 0) {
+                alert("Please enter a valid quantity.");
+                return;
+            }
+
+            let medicine = medicines[index];
+            let item = { name: medicine.name, quantity, price: medicine.price * quantity };
+
+            cart.push(item);
+            updateCart();
+            alert(`${quantity} x ${medicine.name} added to cart!`);
+        }
+
+        function updateCart() {
+            let cartItems = document.getElementById("cartItems");
+            let totalAmount = document.getElementById("totalAmount");
+            cartItems.innerHTML = "";
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                total += item.price;
+                cartItems.innerHTML += `
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        ${item.quantity} x ${item.name}
+                        <span>$${item.price}</span>
+                        <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">X</button>
+                    </li>
+                `;
+            });
+
+            totalAmount.innerText = total.toFixed(2);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function generateBill() {
+            if (cart.length === 0) {
+                alert("Your cart is empty.");
+                return;
+            }
+
+            let billDetails = "----- BILL -----\n";
+            let total = 0;
+            cart.forEach(item => {
+                billDetails += `${item.quantity} x ${item.name} - $${item.price}\n`;
+                total += item.price;
+            });
+
+            billDetails += `\nTotal Amount: $${total.toFixed(2)}`;
+            alert(billDetails);
+            cart = [];
+            updateCart();
+        }
+
+        // Load medicines on page load
+        window.onload = loadMedicines;
+    </script>
+
+</body>
+</html>

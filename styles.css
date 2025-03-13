@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+header {
+    background: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dashboard, .about, .contact {
+    padding: 20px;
+    background: white;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.cards {
+    display: flex;
+    gap: 15px;
+}
+
+.card {
+    background: #17a2b8;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    width: 30%;
+}
+.about-image {
+    width: 50%; /* Adjust this percentage as needed */
+    max-width: 400px; /* Ensures images are not too large */
+    height: auto; /* Maintains aspect ratio */
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+/* Table Styling */
+.table {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table th {
+    background: #007bff;
+    color: white;
+    text-align: center;
+}
+
+.table tbody tr:nth-child(odd) {
+    background: #f8f9fa;
+}
+
+/* Condition Labels */
+.condition {
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.condition.critical {
+    background: #dc3545;
+    color: white;
+}
+
+.condition.moderate {
+    background: #ffc107;
+    color: black;
+}
+
+.condition.mild {
+    background: #28a745;
+    color: white;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #ff9f43, #ff6b6b);
+    border: none;
+    color: white;
+}
+
+.btn-warning:hover {
+    background: linear-gradient(135deg, #ff6b6b, #ff9f43);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border: none;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+}
+
+/* Icons */
+.icon-text {
+    margin-left: 5px;
+}
+
+/* Table Hover */
+.table-hover tbody tr:hover {
+    background: #e9ecef;
+    transition: 0.3s;
+}

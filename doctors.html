@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors - Medivance Hospital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="text-center bg-primary text-white p-4">
+        <h1><i class="fas fa-user-md"></i> Our Doctors</h1>
+    </header>
+
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Loop through 30 doctors -->
+            <script>
+                const doctors = [
+                    { name: "Dr. A. Sharma", specialty: "Cardiologist", icon: "fa-heartbeat", color: "text-danger", phone: "9876543210" },
+                    { name: "Dr. B. Rao", specialty: "Neurologist", icon: "fa-brain", color: "text-warning", phone: "9876543211" },
+                    { name: "Dr. C. Patel", specialty: "Orthopedic Surgeon", icon: "fa-bone", color: "text-success", phone: "9876543212" },
+                    { name: "Dr. D. Verma", specialty: "General Physician", icon: "fa-stethoscope", color: "text-info", phone: "9876543213" },
+                    { name: "Dr. E. Singh", specialty: "Dentist", icon: "fa-tooth", color: "text-secondary", phone: "9876543214" },
+                    { name: "Dr. F. Kapoor", specialty: "Pediatrician", icon: "fa-baby", color: "text-danger", phone: "9876543215" },
+                    { name: "Dr. G. Mehta", specialty: "Pulmonologist", icon: "fa-lungs", color: "text-dark", phone: "9876543216" },
+                    { name: "Dr. H. Das", specialty: "Oncologist", icon: "fa-ribbon", color: "text-danger", phone: "9876543217" },
+                    { name: "Dr. I. Roy", specialty: "Dermatologist", icon: "fa-allergies", color: "text-warning", phone: "9876543218" },
+                    { name: "Dr. J. Nair", specialty: "Ophthalmologist", icon: "fa-eye", color: "text-primary", phone: "9876543219" },
+                    { name: "Dr. K. Bose", specialty: "Nephrologist", icon: "fa-tint", color: "text-info", phone: "9876543220" },
+                    { name: "Dr. L. Sen", specialty: "Endocrinologist", icon: "fa-weight", color: "text-success", phone: "9876543221" },
+                    { name: "Dr. M. Chatterjee", specialty: "Psychiatrist", icon: "fa-brain", color: "text-warning", phone: "9876543222" },
+                    { name: "Dr. N. Malhotra", specialty: "Gastroenterologist", icon: "fa-utensils", color: "text-secondary", phone: "9876543223" },
+                    { name: "Dr. O. Kumar", specialty: "Radiologist", icon: "fa-x-ray", color: "text-dark", phone: "9876543224" },
+                    { name: "Dr. P. Gupta", specialty: "ENT Specialist", icon: "fa-assistive-listening-systems", color: "text-primary", phone: "9876543225" },
+                    { name: "Dr. Q. Bajpai", specialty: "Hematologist", icon: "fa-dna", color: "text-danger", phone: "9876543226" },
+                    { name: "Dr. R. Jain", specialty: "Urologist", icon: "fa-procedures", color: "text-info", phone: "9876543227" },
+                    { name: "Dr. S. Dutta", specialty: "Plastic Surgeon", icon: "fa-user", color: "text-warning", phone: "9876543228" },
+                    { name: "Dr. T. Kapoor", specialty: "Gynecologist", icon: "fa-female", color: "text-danger", phone: "9876543229" },
+                    { name: "Dr. U. Saxena", specialty: "Anesthesiologist", icon: "fa-vial", color: "text-dark", phone: "9876543230" },
+                    { name: "Dr. V. Chopra", specialty: "Allergist", icon: "fa-syringe", color: "text-warning", phone: "9876543231" },
+                    { name: "Dr. W. Reddy", specialty: "Pathologist", icon: "fa-microscope", color: "text-secondary", phone: "9876543232" },
+                    { name: "Dr. X. Roy", specialty: "Immunologist", icon: "fa-shield-virus", color: "text-primary", phone: "9876543233" },
+                    { name: "Dr. Y. Ahmed", specialty: "Neurosurgeon", icon: "fa-user-md", color: "text-success", phone: "9876543234" },
+                    { name: "Dr. Z. Khan", specialty: "Pediatric Surgeon", icon: "fa-child", color: "text-info", phone: "9876543235" },
+                    { name: "Dr. AA. Narang", specialty: "Vascular Surgeon", icon: "fa-heart", color: "text-danger", phone: "9876543236" },
+                    { name: "Dr. BB. Mishra", specialty: "Thoracic Surgeon", icon: "fa-lungs", color: "text-dark", phone: "9876543237" },
+                    { name: "Dr. CC. Tiwari", specialty: "Sports Medicine", icon: "fa-running", color: "text-success", phone: "9876543238" },
+                    { name: "Dr. DD. Shukla", specialty: "Geriatrician", icon: "fa-wheelchair", color: "text-secondary", phone: "9876543239" }
+                ];
+
+                doctors.forEach(doctor => {
+                    document.write(`
+                        <div class="col-md-4 mb-4">
+                            <div class="card doctor-card shadow-sm text-center p-3">
+                                <i class="fas ${doctor.icon} fa-3x ${doctor.color}"></i>
+                                <h3>${doctor.name}</h3>
+                                <p><strong>${doctor.specialty}</strong></p>
+                                <p><i class="fas fa-phone"></i> +91 ${doctor.phone}</p>
+                                <button class="btn btn-primary mt-2">View Profile</button>
+                            </div>
+                        </div>
+                    `);
+                });
+            </script>
+        </div>
+    </div>
+
+    <footer class="text-center bg-dark text-white p-3 mt-4">
+        <p>© 2025 Medivance Hospital | All Rights Reserved</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

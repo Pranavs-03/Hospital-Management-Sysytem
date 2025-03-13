@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management - Medivance Hospital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .content {
+            text-align: center;
+            padding: 30px;
+        }
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background: #007bff;
+            color: white;
+        }
+        .status {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .in-stock {
+            background-color: #28a745;
+            color: white;
+        }
+        .low-stock {
+            background-color: #ffc107;
+            color: black;
+        }
+        .out-of-stock {
+            background-color: #dc3545;
+            color: white;
+        }
+        .icon {
+            margin-right: 8px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><i class="fas fa-boxes-stacked"></i> Inventory Management</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content">
+        <h2><i class="fas fa-warehouse"></i> Hospital Supply Inventory</h2>
+        <table>
+            <tr>
+                <th><i class="fas fa-box"></i> Item</th>
+                <th><i class="fas fa-sort-numeric-up"></i> Quantity</th>
+                <th><i class="fas fa-exclamation-circle"></i> Status</th>
+            </tr>
+            <tr>
+                <td><i class="fas fa-head-side-mask icon"></i> Face Masks</td>
+                <td>500</td>
+                <td><span class="status in-stock">In Stock</span></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-hand-holding-medical icon"></i> Gloves</td>
+                <td>1000</td>
+                <td><span class="status in-stock">In Stock</span></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-syringe icon"></i> Syringes</td>
+                <td>150</td>
+                <td><span class="status low-stock">Low Stock</span></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-stethoscope icon"></i> Stethoscopes</td>
+                <td>20</td>
+                <td><span class="status low-stock">Low Stock</span></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-tablets icon"></i> Painkillers</td>
+                <td>0</td>
+                <td><span class="status out-of-stock">Out of Stock</span></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-prescription-bottle-alt icon"></i> Antibiotics</td>
+                <td>80</td>
+                <td><span class="status in-stock">In Stock</span></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-user-md icon"></i> Surgical Gowns</td>
+                <td>300</td>
+                <td><span class="status in-stock">In Stock</span></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-procedures icon"></i> Hospital Beds</td>
+                <td>50</td>
+                <td><span class="status low-stock">Low Stock</span></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-thermometer icon"></i> Thermometers</td>
+                <td>200</td>
+                <td><span class="status in-stock">In Stock</span></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-vial icon"></i> Blood Bags</td>
+                <td>40</td>
+                <td><span class="status low-stock">Low Stock</span></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-vials icon"></i> COVID-19 Test Kits</td>
+                <td>10</td>
+                <td><span class="status low-stock">Low Stock</span></td>
+            </tr>
+            <tr>
+                <td><i class="fas fa-x-ray icon"></i> X-ray Films</td>
+                <td>5</td>
+                <td><span class="status out-of-stock">Out of Stock</span></td>
+            </tr>
+        </table>
+    </section>
+
+</body>
+</html>
